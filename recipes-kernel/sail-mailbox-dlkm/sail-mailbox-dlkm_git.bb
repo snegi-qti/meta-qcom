@@ -7,8 +7,6 @@ SRC_URI = " \
     git://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sail-mailbox-kmd.git;branch=sail-mailbox-kernel.lnx.1.0.r1-rel;protocol=https \
 "
 
-S = "${UNPACKDIR}/sail-mailbox-kmd"
-
 inherit module
 
 EXTRA_OEMAKE += "MACHINE='${MACHINE}'"
