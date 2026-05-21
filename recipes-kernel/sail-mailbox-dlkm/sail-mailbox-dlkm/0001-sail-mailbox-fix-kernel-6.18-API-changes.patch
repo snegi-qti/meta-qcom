@@ -1,0 +1,51 @@
+From 23ed8512dc781a33c58962e7367c2c4e6c32df82 Mon Sep 17 00:00:00 2001
+From: "Qualcomm Innovation Center, Inc" <quic_linux@quicinc.com>
+Date: Thu, 21 May 2026 04:54:10 -0700
+Subject: [PATCH] sail-mailbox: fix kernel 6.18 API incompatibilities
+
+Fix two kernel API changes that break compilation on kernel 6.18:
+
+1. eventfd_signal() count argument removed in kernel 6.15:
+   eventfd_signal(ctx, 1) -> eventfd_signal(ctx)
+
+2. platform_driver.remove return type changed to void in kernel 6.11:
+   static int sailmb_remove() -> static void sailmb_remove()
+
+Signed-off-by: Qualcomm Innovation Center, Inc. <quic_linux@quicinc.com>
+Upstream-Status: Pending
+---
+ mailbox-ipcc/qcom-sail-ipcc.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/mailbox-ipcc/qcom-sail-ipcc.c b/mailbox-ipcc/qcom-sail-ipcc.c
+index be47662..43167d6 100644
+--- a/mailbox-ipcc/qcom-sail-ipcc.c
++++ b/mailbox-ipcc/qcom-sail-ipcc.c
+@@ -175,7 +175,7 @@ static irqreturn_t sailmb_intr_handler(int irq, void *data)
+ 		return IRQ_NONE;
+ 	}
+ 
+-	eventfd_signal(event_fd, 1);
++	eventfd_signal(event_fd);
+ 	return IRQ_HANDLED;
+ }
+ 
+@@ -714,14 +714,12 @@ failed_chrdev_alloc:
+        return ret;
+ }
+ 
+-static int sailmb_remove(struct platform_device *pdev)
++static void sailmb_remove(struct platform_device *pdev)
+ {
+ 	device_destroy(sailmb_dev->sailmb_driver_class, sailmb_dev->sailmb_dev_num);
+ 	class_destroy(sailmb_dev->sailmb_driver_class);
+ 	cdev_del(&sailmb_dev->sailmb_cdev);
+ 	unregister_chrdev_region(sailmb_dev->sailmb_dev_num, 1);
+-
+-	return 0;
+ }
+ 
+ static int sailmb_suspend(struct device *dev)
+-- 
+2.34.1
+

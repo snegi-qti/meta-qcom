@@ -5,6 +5,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/${LICENSE};md5=801f80980d171dd6
 SRCREV = "e5044f27f4a42967561c09e0baff9f9c88dde101"
 SRC_URI = " \
     git://git.codelinaro.org/clo/le/platform/vendor/qcom-opensource/sail-mailbox-kmd.git;branch=sail-mailbox-kernel.lnx.1.0.r1-rel;protocol=https \
+    file://0001-sail-mailbox-fix-kernel-6.18-API-changes.patch \
 "
 
 inherit module
