@@ -15,6 +15,10 @@ S = "${UNPACKDIR}"
 
 inherit bin_package
 
+# libsailupdatelib.so is a non-versioned .so — treat as runtime lib, not dev lib
+SOLIBS = ".so"
+FILES_SOLIBSDEV = ""
+
 INSANE_SKIP:${PN} += "already-stripped"
 
 # This package is only for ARMv8 (aarch64) machines.
