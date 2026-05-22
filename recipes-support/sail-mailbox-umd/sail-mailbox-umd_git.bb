@@ -1,5 +1,8 @@
 inherit bin_package
 
+# PV pinned to match the Artifactory tarball filename (sail-mailbox_1.0_*.tar.gz)
+PV = "1.0"
+
 SUMMARY = "Driver providing support for SAIL-APSS Mailbox communication"
 DESCRIPTION = "Provide Sail Mailbox Driver to communicate between SAIL and APSS"
 LICENSE = "LICENSE.qcom-2"
