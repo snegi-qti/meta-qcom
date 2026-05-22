@@ -29,12 +29,7 @@ SRC_URI:append:qcs8300 = " ${PBT_ARTIFACTORY}/${PBT_BUILD_ID}/${PBT_BIN_PATH}/sa
 # Tarball unpacks directly to UNPACKDIR (no subdirectory)
 S = "${UNPACKDIR}"
 
-PACKAGES =+ "${PN}-bin"
-
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
-
-FILES:${PN}-bin  = "${bindir}/sail_console_chan_app"
-FILES:${PN}-bin += "${bindir}/saildbg"
 
 INSANE_SKIP:${PN} += "already-stripped"
