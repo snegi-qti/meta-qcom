@@ -10,17 +10,18 @@ DEPENDS += "glib-2.0 systemd linux-libc-headers pkgconfig-native cmake-native"
 # In the reference project (meta-qcom-hwe) these come from conf/machine/include/qcom-prebuilts.inc
 PBT_ARTIFACTORY ?= "https://softwarecenter.qualcomm.com/nexus/generic/product/chip/software-product-family/Qualcomm_Linux.SPF.1.0/qualcomm_linux.spf.1.0-test-device-public"
 PBT_BUILD_ID    ?= "r1.0_00120.0"
-PBT_BIN_PATH    ?= "LE.QCLINUX.1.0.R1/apps_proc/prebuilt_HY22/${BPN}/260318"
+# Hardcode sail-mailbox (not ${BPN}=sail-mailbox-umd) to match Artifactory path
+PBT_BIN_PATH    ?= "LE.QCLINUX.1.0.R1/apps_proc/prebuilt_HY22/sail-mailbox/260318"
 PBT_ARCH        ?= "qcs9100"
 PBT_ARCH:qcs8300 = "qcs8300"
 
 QCS9100_SHA256SUM = "464adddd20b4466ccafbfdc0b7311ad98457c06fa0e11016b34150a709593847"
 SRC_URI[qcs9100.sha256sum] = "${QCS9100_SHA256SUM}"
-SRC_URI:append:qcs9100 = " ${PBT_ARTIFACTORY}/${PBT_BUILD_ID}/${PBT_BIN_PATH}/${BPN}_${PV}_${PBT_ARCH}.tar.gz;name=${PBT_ARCH}"
+SRC_URI:append:qcs9100 = " ${PBT_ARTIFACTORY}/${PBT_BUILD_ID}/${PBT_BIN_PATH}/sail-mailbox_${PV}_${PBT_ARCH}.tar.gz;name=${PBT_ARCH}"
 
 QCS8300_SHA256SUM = "54cbc8a45793d5ff827f83cc9e04fb0caad48f4eb433ce1641f696b536e06701"
 SRC_URI[qcs8300.sha256sum] = "${QCS8300_SHA256SUM}"
-SRC_URI:append:qcs8300 = " ${PBT_ARTIFACTORY}/${PBT_BUILD_ID}/${PBT_BIN_PATH}/${BPN}_${PV}_${PBT_ARCH}.tar.gz;name=${PBT_ARCH}"
+SRC_URI:append:qcs8300 = " ${PBT_ARTIFACTORY}/${PBT_BUILD_ID}/${PBT_BIN_PATH}/sail-mailbox_${PV}_${PBT_ARCH}.tar.gz;name=${PBT_ARCH}"
 
 # Tarball unpacks directly to UNPACKDIR (no subdirectory)
 S = "${UNPACKDIR}"
