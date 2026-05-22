@@ -10,6 +10,9 @@ SAILMB_PATH = "r1.0_00120.0/LE.QCLINUX.1.0.R1/apps_proc/prebuilt_HY22/sail-mailb
 SRC_URI = "${SAILMB_BASE}/${SAILMB_PATH}/sail-mailbox_${PV}_qcs9100.tar.gz"
 SRC_URI[sha256sum] = "464adddd20b4466ccafbfdc0b7311ad98457c06fa0e11016b34150a709593847"
 
+# Tarball unpacks directly to UNPACKDIR (no subdirectory)
+S = "${UNPACKDIR}"
+
 inherit bin_package
 
 INSANE_SKIP:${PN} += "already-stripped"
