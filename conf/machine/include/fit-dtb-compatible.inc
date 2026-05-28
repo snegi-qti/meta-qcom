@@ -209,7 +209,9 @@ FIT_DTB_COMPATIBLE[sa8775p-ride+sa8775p-ride-camx+lemans-el2+lemans-camx-el2+lem
 "
 FIT_DTB_COMPATIBLE[sa8775p-ride-camx] = "qcom,sa8775p-qam-camx"
 FIT_DTB_COMPATIBLE[sa8775p-ride-camx+lemans-staging] = "qcom,sa8775p-qam-camx-staging"
-FIT_DTB_COMPATIBLE[sa8775p-ride-r3] = " \
+# sail-mailbox overlay always applied for sa8775p-ride-r3 (testing)
+# Vanilla entry removed to avoid ambiguous compatible string match
+FIT_DTB_COMPATIBLE[sa8775p-ride-r3+sail-mailbox] = " \
     qcom,sa8775p-qam-r2.0 \
 "
 FIT_DTB_COMPATIBLE[sa8775p-ride-r3+lemans-staging] = " \
