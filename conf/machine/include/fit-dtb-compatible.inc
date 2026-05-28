@@ -160,9 +160,8 @@ FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2] = " \
 FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2+lemans-staging] = " \
     qcom,qcs9100-qam-el2kvm-staging \
 "
-FIT_DTB_COMPATIBLE[qcs9100-ride-r3] = " \
-    qcom,qcs9100-qam-r2.0 \
-"
+# sail-mailbox overlay always applied for qcs9100-ride-r3 (testing)
+# Vanilla entry removed to avoid ambiguous compatible string match
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3+sail-mailbox] = " \
     qcom,qcs9100-qam-r2.0 \
 "
