@@ -16,7 +16,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/linux-qcom-6.18:"
 
 # Forked kernel with sail-mailbox DTSO (testing only)
 # Fork: https://github.com/Crackerjack2310/kernel.git branch=qcom-6.18.y
-SRCREV ?= "f65a919fb04c"
+SRCREV ?= "f65a919fb04cf85be8f5f9173bdfcc1ba850c80e"
 
 SRCBRANCH ?= "branch=qcom-6.18.y"
 SRCBRANCH:class-devupstream ?= "branch=qcom-6.18.y"
