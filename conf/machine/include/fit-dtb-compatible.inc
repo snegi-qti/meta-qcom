@@ -163,6 +163,9 @@ FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2+lemans-staging] = " \
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3] = " \
     qcom,qcs9100-qam-r2.0 \
 "
+FIT_DTB_COMPATIBLE[qcs9100-ride-r3+sail-mailbox] = " \
+    qcom,qcs9100-qam-r2.0 \
+"
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3+lemans-staging] = " \
     qcom,qcs9100-qam-r2.0-staging \
 "
