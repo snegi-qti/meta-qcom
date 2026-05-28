@@ -14,16 +14,16 @@ PV = "${LINUX_VERSION}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-qcom-6.18:"
 
-# tag:qcom-6.18.y-20260515
-SRCREV ?= "9a4537ba60cc7332c642471323e32f85df771053"
+# Forked kernel with sail-mailbox DTSO (testing only)
+# Fork: https://github.com/Crackerjack2310/kernel.git branch=qcom-6.18.y
+SRCREV ?= "f65a919fb04c"
 
-SRCBRANCH ?= "nobranch=1"
+SRCBRANCH ?= "branch=qcom-6.18.y"
 SRCBRANCH:class-devupstream ?= "branch=qcom-6.18.y"
 
 SRC_URI = " \
-    git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https \
+    git://github.com/Crackerjack2310/kernel.git;${SRCBRANCH};protocol=https \
     file://0001-tools-use-basename-to-identify-file-in-gen-mach-type.patch \
-    file://0002-QCLINUX-arm64-dts-qcom-lemans-Add-SAIL-mailbox-nodes.patch \
 "
 
 # Additional kernel configs.
