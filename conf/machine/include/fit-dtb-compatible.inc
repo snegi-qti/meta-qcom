@@ -160,10 +160,12 @@ FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2] = " \
 FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2+lemans-staging] = " \
     qcom,qcs9100-qam-el2kvm-staging \
 "
-# sail-mailbox overlay always applied for qcs9100-ride-r3 (testing)
-# Vanilla entry removed to avoid ambiguous compatible string match
-FIT_DTB_COMPATIBLE[qcs9100-ride-r3+sail-mailbox] = " \
+FIT_DTB_COMPATIBLE[qcs9100-ride-r3] = " \
     qcom,qcs9100-qam-r2.0 \
+"
+# sail-mailbox activated via EFI variable OsConfigTableSelection="sail"
+FIT_DTB_COMPATIBLE[qcs9100-ride-r3+sail-mailbox] = " \
+    qcom,qcs9100-qam-r2.0-sail \
 "
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3+lemans-staging] = " \
     qcom,qcs9100-qam-r2.0-staging \
@@ -209,10 +211,12 @@ FIT_DTB_COMPATIBLE[sa8775p-ride+sa8775p-ride-camx+lemans-el2+lemans-camx-el2+lem
 "
 FIT_DTB_COMPATIBLE[sa8775p-ride-camx] = "qcom,sa8775p-qam-camx"
 FIT_DTB_COMPATIBLE[sa8775p-ride-camx+lemans-staging] = "qcom,sa8775p-qam-camx-staging"
-# sail-mailbox overlay always applied for sa8775p-ride-r3 (testing)
-# Vanilla entry removed to avoid ambiguous compatible string match
-FIT_DTB_COMPATIBLE[sa8775p-ride-r3+sail-mailbox] = " \
+FIT_DTB_COMPATIBLE[sa8775p-ride-r3] = " \
     qcom,sa8775p-qam-r2.0 \
+"
+# sail-mailbox activated via EFI variable OsConfigTableSelection="sail"
+FIT_DTB_COMPATIBLE[sa8775p-ride-r3+sail-mailbox] = " \
+    qcom,sa8775p-qam-r2.0-sail \
 "
 FIT_DTB_COMPATIBLE[sa8775p-ride-r3+lemans-staging] = " \
     qcom,sa8775p-qam-r2.0-staging \
