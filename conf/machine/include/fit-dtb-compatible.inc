@@ -41,6 +41,10 @@ FIT_DTB_COMPATIBLE[lemans-evk+lemans-evk-camx+lemans-el2+lemans-camx-el2+lemans-
 FIT_DTB_COMPATIBLE[lemans-evk+lemans-evk-ifp-mezzanine] = " \
     qcom,qcs9075-iot-subtype1 \
 "
+# lemans-sail-mb activated via EFI variable VendorDtbOverlays="sail-mb"
+FIT_DTB_COMPATIBLE[lemans-evk+lemans-sail-mb] = " \
+    qcom,qcs9075-iot-sail-mb \
+"
 FIT_DTB_COMPATIBLE[lemans-evk+lemans-evk-ifp-mezzanine+lemans-staging+lemans-evk-staging] = " \
     qcom,qcs9075-iot-subtype1-staging \
 "
@@ -163,9 +167,9 @@ FIT_DTB_COMPATIBLE[qcs9100-ride+lemans-el2+lemans-staging] = " \
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3] = " \
     qcom,qcs9100-qam-r2.0 \
 "
-# sail-mailbox activated via EFI variable OsConfigTableSelection="sail"
-FIT_DTB_COMPATIBLE[qcs9100-ride-r3+sail-mailbox] = " \
-    qcom,qcs9100-qam-r2.0-sail \
+# lemans-sail-mb activated via EFI variable VendorDtbOverlays="sail-mb"
+FIT_DTB_COMPATIBLE[qcs9100-ride-r3+lemans-sail-mb] = " \
+    qcom,qcs9100-qam-r2.0-sail-mb \
 "
 FIT_DTB_COMPATIBLE[qcs9100-ride-r3+lemans-staging] = " \
     qcom,qcs9100-qam-r2.0-staging \
@@ -214,9 +218,9 @@ FIT_DTB_COMPATIBLE[sa8775p-ride-camx+lemans-staging] = "qcom,sa8775p-qam-camx-st
 FIT_DTB_COMPATIBLE[sa8775p-ride-r3] = " \
     qcom,sa8775p-qam-r2.0 \
 "
-# sail-mailbox activated via EFI variable OsConfigTableSelection="sail"
-FIT_DTB_COMPATIBLE[sa8775p-ride-r3+sail-mailbox] = " \
-    qcom,sa8775p-qam-r2.0-sail \
+# lemans-sail-mb activated via EFI variable VendorDtbOverlays="sail-mb"
+FIT_DTB_COMPATIBLE[sa8775p-ride-r3+lemans-sail-mb] = " \
+    qcom,sa8775p-qam-r2.0-sail-mb \
 "
 FIT_DTB_COMPATIBLE[sa8775p-ride-r3+lemans-staging] = " \
     qcom,sa8775p-qam-r2.0-staging \
