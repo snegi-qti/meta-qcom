@@ -16,14 +16,15 @@ PV = "${LINUX_VERSION}"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-qcom-6.18:"
 
-# tag:qcom-6.18.y-20260519
-SRCREV ?= "6964936c9bfc3337aa8ba8a0fb25021d06e5ce04"
+# Forked kernel with sail-mailbox DTSO (testing only)
+# Fork: https://github.com/Crackerjack2310/kernel.git branch=qcom-6.18.y
+SRCREV ?= "c06a3c9ad08e4b11643985f8dccd83e55f64e937"
 
-SRCBRANCH ?= "nobranch=1"
+SRCBRANCH ?= "branch=qcom-6.18.y"
 SRCBRANCH:class-devupstream ?= "branch=qcom-6.18.y"
 
 SRC_URI = " \
-    git://github.com/qualcomm-linux/kernel.git;${SRCBRANCH};protocol=https \
+    git://github.com/Crackerjack2310/kernel.git;${SRCBRANCH};protocol=https \
     file://0001-tools-use-basename-to-identify-file-in-gen-mach-type.patch \
 "
 

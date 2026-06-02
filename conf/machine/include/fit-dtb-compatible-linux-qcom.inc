@@ -196,3 +196,9 @@ FIT_DTB_COMPATIBLE[qcom_qcs6490-iot-camx-staging] = \
     "qcs6490-rb3gen2 qcs6490-rb3gen2-vision-mezzanine-camx kodiak-staging"
 FIT_DTB_COMPATIBLE[qcom_qcs6490-iot-subtype2-camx-staging] = \
     "qcs6490-rb3gen2 qcs6490-rb3gen2-vision-mezzanine-camx kodiak-staging"
+
+# ---------- lemans sail-mb ----------
+# Activated via EFI variable: VendorDtbOverlays="sail-mb"
+FIT_DTB_COMPATIBLE[qcom_qcs9075-iot-sail-mb] =     "lemans-evk lemans-sail-mb"
+FIT_DTB_COMPATIBLE[qcom_qcs9100-qam-r2.0-sail-mb] =     "qcs9100-ride-r3 lemans-sail-mb"
+FIT_DTB_COMPATIBLE[qcom_sa8775p-qam-r2.0-sail-mb] =     "sa8775p-ride-r3 lemans-sail-mb"

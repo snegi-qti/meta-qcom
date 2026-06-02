@@ -11,7 +11,9 @@ defaults:
 
 repos:
   meta-qcom-distro:
-    url: https://github.com/qualcomm-linux/meta-qcom-distro
+    url: https://github.com/Crackerjack2310/meta-qcom-distro
+    branch: wrynose
+    commit: 61fc13a3545748b526bd0e0f68e2cdb36e704e17
 
   meta-openembedded:
     url: https://github.com/openembedded/meta-openembedded
